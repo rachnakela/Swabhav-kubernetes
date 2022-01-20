@@ -1,0 +1,22 @@
+version: "1.0"
+services:
+  post_svc:
+    build: ./blogpost
+    ports:
+      - "4001:4001"
+  comment_svc:
+    build: ./postcomment
+    ports:
+      - "4002:4002"
+  event_svc:
+    build: ./event-bus #build and create container
+    ports:
+      - "4005:4005"
+  query_svc:
+    build: ./query
+    ports:
+      - "4003:4003"
+  ui_svc:
+    build: ./ui
+    ports:
+      - "3000:3000"
